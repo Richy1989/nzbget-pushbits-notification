@@ -8,7 +8,8 @@ For more information about PushBits, visit their [GitHub repository](https://git
 
 ## Requirements
  - This script requires Python3.8 to be installed on your system.
- - "Requests" dependency needs to be installed. Install with "pip install requests"
+ - "Requests" dependency needs to be installed. Install with "pip install requests".
+ - A running Pushbits instance. 
 
 ## Installation
 
