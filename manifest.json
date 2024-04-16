@@ -1,0 +1,68 @@
+{
+  "main": "nzb_notify_pushbits.py",
+  "name": "NZBgetNotifier",
+  "homepage": "",
+  "kind": "QUEUE/POST-PROCESSING",
+  "displayName": "NZBget Notifier",
+  "version": "1.0.0",
+  "author": "Richy1989",
+  "license": "GNU",
+  "about": "Sends Notification.",
+  "queueEvents": "NZB_ADDED, NZB_DOWNLOADED",
+  "taskTime": "",
+  "requirements": [
+    "This script requires Python3.8 and to be installed on your system.",
+    "\"Requests\" dependency. Needs to be installed. Install with \"pip install requests\""
+  ],
+  "description": ["This script sends Pushbits notification when the job is done and or queued."],
+  "options": [
+    {
+      "name": "ConnectionString",
+      "displayName": "ConnectionString",
+      "value": "http://{host}:{port}",
+      "description": ["Connection String for Pushbits"],
+      "select": []
+    },
+    {
+      "name": "AppToken",
+      "displayName": "AppToken",
+      "value": "",
+      "description": ["Pushbits Application Token"],
+      "select": []
+    },
+    {
+      "name": "OnQueue",
+      "displayName": "NotifyOnQueue",
+      "value": "yes",
+      "description": ["Send a notification when a new entry is queued into NZBGet for download"],
+      "select": ["yes", "no"]
+    },
+    {
+      "name": "OnDownload",
+      "displayName": "NotifyOnDownload",
+      "value": "yes",
+      "description": ["Send a notification if the download was successful."],
+      "select": ["yes", "no"]
+    }
+  ],
+  "commands": [
+    {
+      "name": "ConnectionTest",
+      "action": "Send Test E-Mail",
+      "displayName": "ConnectionTest",
+      "description": ["To check connection parameters click the button."]
+    }
+  ],
+  "sections": [
+   {
+      "name": "Categories",
+      "prefix": "Category",
+      "multi": true
+    },
+    {
+      "name": "Feeds",
+      "prefix": "Feed",
+      "multi": false
+    }
+  ]
+}
