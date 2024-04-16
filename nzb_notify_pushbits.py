@@ -77,7 +77,6 @@ def execute_notification(notification_data):
 
 # Check if the script is executed from settings page with a custom command
 command = os.environ.get('NZBCP_COMMAND')
-
 test_mode = command == 'ConnectionTest'
 
 if test_mode:
@@ -103,8 +102,6 @@ event = os.environ.get('NZBNA_EVENT')
 onQueue = os.environ.get('NZBPO_OnQueue')
 
 if event != None and onQueue == 'yes':
-	#print('[INFO] No event found! Exiting!')
-	
     print('[INFO] Event: ' + event)
 
     if event == 'NZB_ADDED':
