@@ -69,7 +69,7 @@ def execute_notification(notification_data):
     
     #Create URL with token
     url_with_token = f"{url}/message?token={token}"
-    print('[INFO] Send Notification to:' + url_with_token)
+    print('[INFO] Send Notification to: ' + url)
 	
     data = notification_data.getData()
     response = requests.post(url_with_token, headers=headers, data=json.dumps(data))
@@ -81,12 +81,19 @@ command = os.environ.get('NZBCP_COMMAND')
 test_mode = command == 'ConnectionTest'
 
 if test_mode:
-	#Do the Test
-	print('[INFO] Test Mode Starting:')
-	notification_data = NotificationData('Testing Notification', 'This is the test to send a notification!\nWith a new Line', None)
-	execute_notification(notification_data)
-	print('[INFO] Test Mode Done! Exit!')
-	sys.exit(POSTPROCESS_SUCCESS)
+    #Do the Test
+    print('[INFO] Test Mode Starting:')
+
+    onDownload = os.environ.get('NZBPO_OnDownload')
+    onQueue = os.environ.get('NZBPO_OnQueue')
+
+    print('[INFO] OnQueue Event: ' + onQueue)
+    print('[INFO] OnDownload Event: ' + onDownload)
+    
+    notification_data = NotificationData('Testing Notification', 'This is the test to send a notification!\nWith a new Line', None)
+    execute_notification(notification_data)
+    print('[INFO] Test Mode Done! Exit!')
+    sys.exit(POSTPROCESS_SUCCESS)
 
 if command != None and not test_mode:
 	print('[ERROR] Invalid command ' + command)
