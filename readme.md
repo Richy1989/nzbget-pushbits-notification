@@ -21,7 +21,7 @@ For more information about PushBits, visit their [GitHub repository](https://git
 
 4. **Configure NZBGet**: Open the NZBGet web interface and navigate to Settings > Extensions Manager > PushBit Notifier.
 
-5. **Configure PushBits**: Configure the `ConnectionString`, `AppToken` and spefify the events to listen to. 
+5. **Configure PushBits**: Configure the `ConnectionString`, `AppToken` and specify the events to listen to. 
 
 6. **Save Changes**: After configuring the PushBits extension, don't forget to click "Save all changes" to apply your settings.
 
