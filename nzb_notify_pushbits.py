@@ -15,12 +15,11 @@ headers = {
 
 #main programm
 def main():
-
     # Check if the script is called from nzbget 15.0 or later
     if not 'NZBOP_NZBLOG' in os.environ:
         print('*** NZBGet post-processing script ***')
         print('This script is supposed to be called from nzbget (15.0 or later).')
-        sys.exit(POSTPROCESS_ERROR)
+        return
 
     print('[DETAIL] Script successfully started')
     sys.stdout.flush()
@@ -29,7 +28,7 @@ def main():
     for	optname in required_options:
         if (not optname in os.environ):
             print('[ERROR] Option %s is missing in configuration file. Please check script settings' % optname[6:])
-            sys.exit(POSTPROCESS_ERROR)
+            return
 
     class NotificationData:
         def __init__(self, title, body, attach):
@@ -128,8 +127,6 @@ if __name__ == "__main__":
         main()
     except:
         print('[ERROR] An exception occurred')
-        print('[ERROR] We will finish with success, but no notification has been sent.')
+        print('[ERROR] Will finish with success, but no notification has been sent.')
 
     sys.exit(POSTPROCESS_SUCCESS)
-    
-    
