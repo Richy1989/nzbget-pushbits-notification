@@ -30,7 +30,7 @@ For any issues with the extension, you can report them on the [GitHub repository
 
 ## License
 
-This extension is distributed under the [MIT License](LICENSE). Feel free to modify and distribute it according to the terms of this license.
+This extension is distributed under the [MIT License](MIT-LICENSE). Feel free to modify and distribute it according to the terms of this license.
 
 ---
 
