@@ -6,6 +6,10 @@ This extension for NZBGet allows users to send notifications via PushBits when n
 
 For more information about PushBits, visit their [GitHub repository](https://github.com/pushbits/server).
 
+## Requirements
+ - This script requires Python3.8 to be installed on your system.
+ - "Requests" dependency needs to be installed. Install with "pip install requests"
+
 ## Installation
 
 1. **Download Extension**: Obtain the latest version of the extension from the [GitHub repository](https://github.com/Richy1989/nzbget-pushbits-notification).

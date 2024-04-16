@@ -11,8 +11,8 @@
   "queueEvents": "NZB_ADDED, NZB_DOWNLOADED",
   "taskTime": "",
   "requirements": [
-    "This script requires Python3.8 and to be installed on your system.",
-    "\"Requests\" dependency. Needs to be installed. Install with \"pip install requests\""
+    "This script requires Python3.8 to be installed on your system.",
+    "\"Requests\" dependency needs to be installed. Install with \"pip install requests\""
   ],
   "description": ["This script sends Pushbits notification when the job is done and or queued."],
   "options": [
