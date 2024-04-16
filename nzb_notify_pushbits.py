@@ -93,8 +93,9 @@ if command != None and not test_mode:
 	sys.exit(POSTPROCESS_ERROR)
 
 event = os.environ.get('NZBNA_EVENT')
+onQueue = os.environ.get('NZBPO_OnQueue')
 
-if event != None:
+if event != None and onQueue == 'yes':
 	#print('[INFO] No event found! Exiting!')
 	
     print('[INFO] Event: ' + event)
@@ -105,10 +106,11 @@ if event != None:
         execute_notification(notification_data)
         print('[INFO] NZB_Added Processing Completed Successfully')
 
+onDownload = os.environ.get('NZBPO_OnDownload')
 state_options = ('SUCCESS', 'FAILURE')
 state = os.environ.get('NZBPP_TOTALSTATUS')
 
-if state != None and state in state_options:
+if state != None and state in state_options and onDownload == 'yes':
     print('[INFO] NZB Finsihed ' + state)
     notification_data = create_finshed_notification(state)
     execute_notification(notification_data)
